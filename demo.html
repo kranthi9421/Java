@@ -195,5 +195,108 @@ Adding JSON to Aanother JSON:
     console.log(set);
     console.log([...set])
 </script>
------>
 
+
+<script>
+    let set = new Set();
+    set.add(10)
+       .add(20)
+       .add(30)
+       .add(40)
+       .add(50)
+       console.log(set);
+       set.delete(50);
+       console.log(set);
+       console.log(set.has(40));
+       console.log(set.values());
+       console.log(set.keys());
+       for(let x of set){
+           console.log(x);
+       };
+       set.clear();
+       console.log(set);
+</script>
+
+
+<script>
+ ==> we cannot add primitives to WeakSet.
+ ==> in WeakSet we can only add JSON objects.
+ 
+ let ws = new WeakSet();
+    console.dir(ws);
+  
+   //WeakSet()
+    //delete()
+    //has()
+    //add()
+</script>
+
+
+<script>
+    let ws = new WeakSet();
+    ws.add(10);
+    console.log(ws)
+</script>
+
+<script>
+      let ws = new WeakSet();
+
+     let key1 = {data:10};
+     let key2 = {data:20};
+
+     ws.add(key1).add(key2);
+     console.log(ws);
+     console.log(ws.has(key1));
+     ws.delete(key1);
+     console.log(ws);
+ </script>
+ ---->
+
+ 
+ 
+ <!----
+
+    // IIFE ==> Immidiate Invokable Functional Expression.
+    // introduced in ES9.
+    // self invokable functions are alson called as (IIFE).
+    // IIFE are used to overcome the global polluting issue.
+    //syntax   (()=>{})()
+
+<script>
+    (()=>{
+        console.log("Welcome to IIFE")
+    })();
+</script>
+
+<script>
+    ((arg1,arg2)=>{
+        console.log(arg1+arg2)
+    })(10,20);
+</script>
+
+<script>
+    let res = (()=>{
+        return "hello";
+    })();
+    console.log(res);
+</script>
+
+<script>
+    for (var i=0;i<5;i++){
+        ((i)=>{
+          setTimeout(()=>{
+          console.log(i);
+        },5000)
+        })(i);
+  
+    };
+</script>
+---->
+
+<!-----
+    Generators & Iterators
+   ==> In Order to produce values dynamically then we have to use Generators&Iterators.
+   ==> Generators utilizes the memory efficiently.
+   ==> we will represent generators by using "*" 
+
+-->
