@@ -50,5 +50,150 @@ optional Parameter in functions
     
     > tsc demo.ts
     > node demo.js
+-----------------------------------
+Data structures:
+Adding JSON to Aanother JSON:
+
+<!DOCTYPE html>
+<html>
+    <script>
+        var obj = {};
+
+        var key1 = {};
+        var value1 = "Hello_1";
+
+        obj[key1] = value1;
+       
+        console.log(obj);
+
+        var key2 = {};
+        var value2 = "Hello_2";
+
+        obj[key2] = value2;
+        console.log(obj);
+    </script>
+</html>
+-----------------------------------------------
+<script>
+    let map = new Map();
+    console.dir(map);
+
+    //size()          //delete()
+    //Map()           //clear()
+    //get()           //entries(),forEach()
+    //set()           //keys()
+    //has()           //values()
+</script>
+
+<script>
+    let map = new Map();
     
--->
+    let key1 = {};
+    let key2 = {};
+    
+    let value1 = "Hello_1";
+    let value2 = "Hello_2";
+    
+    map.set(key1,value1);
+    map.set(key2,value2);
+    
+    console.log(map);
+</script>
+
+
+<script>
+    let map = new Map();
+    map.set("key1","Hello_1")
+       .set("key2","Hello_2")
+       .set("key3",'Hello_3')
+       .set("key4","Hello_4")
+       .set("key5","Hello_5");
+
+       console.log(map);
+       console.log(map.size);
+       console.log(map.get("key5"));
+       console.log(map.has("key5"));
+       map.delete("key5");
+       console.log(map);
+
+     for (let [k,v] of map){
+         console.log(k,v);
+     };
+
+     console.log(map.keys());
+     console.log(map.values());
+
+     map.clear();
+     console.log(map);
+
+</script>
+
+<script>
+    let map = new Map();
+    map.set("key1","hello_1");
+    map.set("Key2","hello_1");
+    console.log(map);
+
+    map.set("key3","hello_3");
+    map.set("key3","hello_4");
+    console.log(map);
+</script>
+
+<script>
+    let map = new WeakMap();
+    console.dir(map);
+
+    //WeakMap()
+    //delete()
+    //get()
+    //set()
+    //has
+</script>
+
+<script>
+    //WeakMap wont allow primitives as keys.
+
+    let map = new WeakMap();
+   
+    let key1 = {};
+    let value1 = "hello_1";
+
+    map.set(key1,value1);
+    console.log(map);
+
+    map.set("key2","hello_2");
+</script>
+
+<script>
+    let set = new Set();
+    console.dir(set);
+
+    //Set()                   //entries()
+    //has()                   //forEach()
+    //add()                   //value()
+    //delete()                //keys()
+    //clear()
+</script>
+
+
+<script>
+  ==> set wont allows the duplicate data.
+    
+  let set = new Set();
+
+    set.add(10)
+       .add(20)
+       .add(10)
+       .add(30)
+       console.log(set);
+</script>
+
+<script>
+    let arr = [10,20,10,30,20];
+    let set = new Set(arr);
+
+    console.log(set);
+    console.log([...set])
+</script>
+----->
+

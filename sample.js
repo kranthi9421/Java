@@ -6,7 +6,10 @@ function fun_one(arg1?:string,arg2?:string,arg3?:string):void{
 fun_one();
 fun_one("Hello_1");
 fun_one(undefined,"Hello_2");
-fun_one(null,null,null);*/
+fun_one(null,null,null);
+
+
+
 function fun_one(arg1, arg2, arg3) {
     if (arg3 === void 0) { arg3 = "Hello_3"; }
     var arg4 = [];
@@ -20,4 +23,4 @@ fun_one();
 fun_one("Hello_1");
 fun_one("Hello_1", "Hello_2", undefined, "Hello_4");
 fun_one(undefined, undefined, undefined, undefined);
-fun_one(null, null, null, null);
+fun_one(null, null, null, null);*/
