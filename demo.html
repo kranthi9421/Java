@@ -291,12 +291,62 @@ Adding JSON to Aanother JSON:
   
     };
 </script>
----->
 
-<!-----
-    Generators & Iterators
-   ==> In Order to produce values dynamically then we have to use Generators&Iterators.
-   ==> Generators utilizes the memory efficiently.
-   ==> we will represent generators by using "*" 
 
--->
+==> Event Bubling and Event Capturing
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="parent">
+            parent
+            <br><br><br>
+            <div id="child">
+               child
+                 <br><br><br>
+                 <div id="subchild">
+                    subchild
+                 </div>
+            </div>
+        </div>
+       
+        <script>
+            $("#parent").click(()=>{
+                console.log("parent");
+            });
+            $("#child").click((event)=>{
+                 event.stopPropagation();
+                console.log("child");
+            });
+            $("#subchild").click(()=>{
+                console.log("subchild");
+            });
+        </script>
+      
+      <script>
+           let parent =  document.querySelector("#parent");
+           let child = document.querySelector("#child");
+           let subchild = document.querySelector("#subchild");
+
+
+           parent.addEventListener("click",()=>{
+               console.log("parent");
+           },true);
+
+           child.addEventListener("click",()=>{
+               console.log("child");
+           },true);
+
+           subchild.addEventListener("click",()=>{
+              console.log("subchild");
+           },true);
+      </script>
+    </body>
+</html>
+------->
+
+

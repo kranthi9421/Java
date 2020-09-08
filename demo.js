@@ -395,7 +395,109 @@ console.log(str2.length);
 
 let str3 = str.trimEnd();
 console.log(str3.length);
-*******************************/
+*******************************
+
+
+   
+    Generators & Iterators
+   ==> In Order to produce values dynamically then we have to use Generators&Iterators.
+   ==> Generators utilizes the memory efficiently.
+   ==> we will represent generators by using "*" 
+
+
+function *fun_one(){
+    yield 10;
+    yield 20;
+    yield 30;
+    yield 40;
+    yield 50;
+};
+let cursor = fun_one();
+console.log(cursor.next());
+console.log(cursor.next());
+console.log(cursor.next());
+console.log(cursor.next());
+console.log(cursor.next());
+console.log(cursor.next());
+
+*******************************
+
+function *fun_one(){
+    yield 10;
+    yield *fun_two();
+    yield 30;
+};
+function *fun_two(){
+   yield 20;
+};
+let cursor = fun_one();
+console.log(cursor.next());
+console.log(cursor.next());
+console.log(cursor.next());
+console.log(cursor.next());
+*******************************
+
+function *fun_one(){
+    yield 10;
+    yield 20;
+    return "hello";
+    yield 30;
+};
+let cursor = fun_one();
+console.log(cursor.next()); 
+console.log(cursor.next()); 
+console.log(cursor.next()); 
+console.log(cursor.next());
+*******************************/ 
+/*
+    Iterators:
+  
+    ==> for()
+    ==> forEach()
+    ==> for..of
+    ==> for..in
+
+
+
+
+let arr = [10,20,30,40,50];
+for (i=0;i<arr.length;i++){
+   console.log(arr[i]);
+};
+
+arr.forEach((element,index)=>{
+    console.log(element,index);
+});
+
+for(let value of arr){
+    console.log(value)
+};
+
+let obj = {
+        "p_id":111,
+        "p_name":"p_one",
+        "p_cost":10000
+};
+for(let key in obj){
+   console.log(key);
+   console.log(obj[key]);
+};
+******************************* 
+
+let obj = {
+        num : 10
+};
+console.log(obj);
+
+
+function myFun(arg1){
+   return this.num+arg1
+};
+
+console.log(myFun.call(obj,10));
+*******************************/ 
+
+
 
 
 
