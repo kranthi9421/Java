@@ -349,4 +349,33 @@ Adding JSON to Aanother JSON:
 </html>
 ------->
 
+<!---
+    
+==> if any inner function holding outer function data then that senario is called CLOSURE:*/
 
+
+<script>
+     function fun_one(){
+         let i = 10;
+         let j = 20;
+         return ()=>{
+             console.log(i);
+             console.log(j);
+         };
+     };
+     console.dir(
+        fun_one()
+     );
+</script>
+
+
+<script>
+    for(var i=0;i<5;i++){
+        ((i)=>{
+            setTimeout(()=>{
+              console.log(i)
+            },5000)
+        })(i);
+      };
+</script>
+---->

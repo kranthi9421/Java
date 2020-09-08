@@ -495,7 +495,39 @@ function myFun(arg1){
 };
 
 console.log(myFun.call(obj,10));
-*******************************/ 
+******************************* 
+
+let obj = {
+    num : 10
+};
+
+function myFun(){
+   console.log(this.num);
+};
+myFun.call(obj);
+*******************************
+
+let obj = {
+    num1 : 10
+};
+function myFun(arg1,arg2,arg3){
+   return this.num1+arg1+arg2+arg3;
+};
+console.log(myFun.call(obj,20,30,40));
+
+let arr = [10,20,30];
+console.log(myFun.apply(obj,arr));
+*******************************
+
+let obj = {
+   num1 : 10
+};
+function myFun(arg1,arg2,arg3){
+   console.log(this.num1+arg1+arg2+arg3);
+};
+let newFun = myFun.bind(obj);
+newFun(20,30,40);
+*******************************/
 
 
 
